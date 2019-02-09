@@ -4,3 +4,9 @@ function average(scores) {
     // code to calculate the average
     return Math.round(scores.reduce((n, currentVal) => n + currentVal) / scores.length);
 }
+
+// Complete the function/method so that it returns the url with anything after the anchor (#) removed.
+function removeUrlAnchor(url){
+    return url.split("#")[0];
+  }
+
