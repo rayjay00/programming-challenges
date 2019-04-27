@@ -59,3 +59,54 @@ function oddOrEven(array) {
     return str.split("").slice(str.length - ending.length).join("") == ending ? true : false;
   }
 
+// Recursive function that rounds a number to its closest "five"
+//Example 1: Input: 21, expected output: 20
+// Example 2: Input 28, expected output: 30
+
+function roundToNext5(n) {
+    let theN = n;
+    function decreaseTheN(theN) {
+       for (i = theN; i <= theN; i--) {
+            return ((i / 5) % 2 === 0) ? theN : decreaseTheN(theN-1)
+        }
+    }
+    function increaseTheN(theN) {
+        if (theN % 5 === 0) {
+            return theN;
+        } else {
+            for (i = theN; i <= theN; i++) {
+                    if ((i / 5) % 2 === 0) {
+                    return theN;
+                } else if ((theN - n) === 4) { 
+                    return decreaseTheN(theN);
+                } else {
+                    return increaseTheN(theN + 1);
+                }
+            }
+        }
+    }
+    return increaseTheN(theN);
+}
+
+function validatePIN(pin) {
+    if (Number(pin) !== undefined) {
+      return pin.length === 4 || pin.length === 6;
+  }
+}
+
+function validatePIN(pin) {
+    var numPin = parseInt(pin);
+    if (numPin.length === 4 || numPin.length === 6) {
+        if (parseInt(numPin) !== NaN && parseInt(numPin) >= 0) {
+            if (numPin.length === 4 || numPin.length === 6) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
