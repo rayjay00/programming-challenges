@@ -1,2 +1,2 @@
 # Programming Challenges
-Occasional programming challenges I complete. Each folder has a different month of different things.
+Occasional programming challenges I complete. Each file is a different month. Mainly taken from Codewars - https://www.codewars.com/users/rayjay00
