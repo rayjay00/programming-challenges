@@ -62,3 +62,19 @@ const checkIfPrime = num => {
 for (let i = 1; i <= 100; i++) {
   checkIfPrime(i) && primeNums.push(i);
 }
+
+// Write a function that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+// moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
+
+const moveZeros = arr => {
+  if (arr.indexOf(0) > -1) {
+    let zeroCount = 0; 
+    const movedZeros = arr.filter(item => {
+      item === 0 && zeroCount++;
+      return item !==0;
+    }).concat(Array(zeroCount).fill(0))
+    return movedZeros;
+  } else {
+    return arr;
+  }
+}

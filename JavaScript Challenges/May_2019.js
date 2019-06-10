@@ -19,43 +19,6 @@ const returnProductName = productName => {
 
 returnProductName('Two Cavity fits 7 7/8 x 3" (BULK)');
 
-// // Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
-// // moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
-
-const moveZeros = arr => {
-  //find how many zeros are present in the array
-  const zeroCount = arr.filter(item => {
-    return item === 0;
-  });
-
-  //remove the zeros from array
-  const removedZeros = arr.filter(item => {
-    return item !== 0;
-  });
-
-  const addZeros = zeroCount.map(item => {
-    return removedZeros.push(0);
-  });
-
-  return addZeros;
-};
-
-console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
-
-// //first way works and is a bit more readable, but thought about this solution also:
-const moveZerosAgain = arr => {
-  return arr
-    .filter(num => {
-      return num !== 0;
-    })
-    .concat(
-      arr.filter(num => {
-        return num === 0;
-      })
-    );
-};
-console.log(moveZerosAgain([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
-
 // //Match count with header.
 // //We have a table with a header for quantities: Under 250, 5000+, 2000+ that is created from an array [250, 5000, 2000]
 // //There is also a "Case Minimum" category.
