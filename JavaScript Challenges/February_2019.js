@@ -1,21 +1,29 @@
 // Create a function that returns the average of an array of numbers ("scores"), rounded to the nearest whole number. You are not allowed to use any loops (including for, for/in, while, and do/while loops).
 
 function average(scores) {
-    // code to calculate the average
-    return Math.round(scores.reduce((n, currentVal) => n + currentVal) / scores.length);
+  // code to calculate the average
+  return Math.round(
+    scores.reduce((n, currentVal) => n + currentVal) / scores.length
+  );
 }
 
 // Complete the function/method so that it returns the url with anything after the anchor (#) removed.
-function removeUrlAnchor(url){
-    return url.split("#")[0];
+function removeUrlAnchor(url) {
+  return url.split('#')[0];
 }
 
 //In this kata, you are asked to square every digit of a number.
 //For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
 //Note: The function accepts an integer and returns an integer
 
-function squareDigits(num){
-    return Number(num.toString().split("").map(num => num * num).join(""));
+function squareDigits(num) {
+  return Number(
+    num
+      .toString()
+      .split('')
+      .map(num => num * num)
+      .join('')
+  );
 }
 
 // In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
@@ -31,9 +39,9 @@ function squareDigits(num){
 // There will always be at least one number in the input string.
 // Output string must be two numbers separated by a single space, and highest number is first.
 
-function highAndLow(numbers){
-    const numsSorted = numbers.split(" ").sort((a, b) => b - a);
-    return `${numsSorted[0]} ${numsSorted[numsSorted.length - 1]}`;
+function highAndLow(numbers) {
+  const numsSorted = numbers.split(' ').sort((a, b) => b - a);
+  return `${numsSorted[0]} ${numsSorted[numsSorted.length - 1]}`;
 }
 
 // Given an array of numbers, determine whether the sum of all of the numbers is odd or even.
@@ -41,21 +49,25 @@ function highAndLow(numbers){
 // If the input array is empty consider it as: [0] (array with a zero).
 
 function oddOrEven(array) {
-    if (array.length === 0) {
-        return 'even'
-     } else {
-        const addedArr = array.reduce((i, num) => i + num);
-        if ((addedArr % 2 === 0)) {
-            return 'even';
-        } else {
-            return 'odd';
-        }
+  if (array.length === 0) {
+    return 'even';
+  } else {
+    const addedArr = array.reduce((i, num) => i + num);
+    if (addedArr % 2 === 0) {
+      return 'even';
+    } else {
+      return 'odd';
     }
- }
+  }
+}
 
 //  Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
 
- function solution(str, ending){
-    return str.split("").slice(str.length - ending.length).join("") == ending ? true : false;
-  }
-
+function solution(str, ending) {
+  return Boolean(
+    str
+      .split('')
+      .slice(str.length - ending.length)
+      .join('') == ending
+  );
+}
